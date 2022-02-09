@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H1sRqq2LahkYnoJl897LGowNzejAeYqJy89y8/eHQdk8/0bwVAfRmFiHB/atxpSPb4SQDbayfM4SiUNmIpTCeg==",
+  "dgSpecHash": "o3CEFd2x1mTkMIS3v7ps7zCYMK+HqPG46lTwMU6pj36qPo4ASq1AEGUCXrCWJRbBYj7kOvGqe1oeSqt9sz8DdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Craig.Jeffords\\source\\repos\\minimalapisdemo\\PlayerService.API\\PlayerService.API.csproj",
+  "projectFilePath": "C:\\Users\\Craig.Jeffords\\source\\repos\\MinimalApisNet6\\src\\PlayerService.API\\PlayerService.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Craig.Jeffords\\.nuget\\packages\\azure.core\\1.20.0\\azure.core.1.20.0.nupkg.sha512",
     "C:\\Users\\Craig.Jeffords\\.nuget\\packages\\azure.extensions.aspnetcore.configuration.secrets\\1.2.1\\azure.extensions.aspnetcore.configuration.secrets.1.2.1.nupkg.sha512",

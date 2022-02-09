@@ -1856,11 +1856,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Craig.Jeffords\\source\\repos\\minimalapisdemo\\PlayerService.API\\PlayerService.API.csproj",
+      "projectUniqueName": "C:\\Users\\Craig.Jeffords\\source\\repos\\MinimalApisNet6\\src\\PlayerService.API\\PlayerService.API.csproj",
       "projectName": "PlayerService.API",
-      "projectPath": "C:\\Users\\Craig.Jeffords\\source\\repos\\minimalapisdemo\\PlayerService.API\\PlayerService.API.csproj",
+      "projectPath": "C:\\Users\\Craig.Jeffords\\source\\repos\\MinimalApisNet6\\src\\PlayerService.API\\PlayerService.API.csproj",
       "packagesPath": "C:\\Users\\Craig.Jeffords\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Craig.Jeffords\\source\\repos\\minimalapisdemo\\PlayerService.API\\obj\\",
+      "outputPath": "C:\\Users\\Craig.Jeffords\\source\\repos\\MinimalApisNet6\\src\\PlayerService.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
