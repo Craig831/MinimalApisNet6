@@ -1,9 +1,19 @@
 # Minimal APIs Demo
 
-This repo contains documentation and demo code for a presentation on .Net 6 minimal APIs.  This code is a work in progress (maybe) and experimental.  I make no promises that anything works.  :)
+This repo contains documentation and demo code for a presentation on .Net 6 minimal APIs.  This code is a work in progress (maybe) and experimental.  I make no promises that anything works.  Getting it running should be pretty simple.
+
+Pre-requisites:
+- Visual Studio 2022
+- .Net 6 SDK
+
+To run the application:
+1. Clone the repo and open the solution in VS2022
+2. The first run should spin up a Sqlite database in your project root and seed it with 30 MLB teams
+3. Navigate to the swagger docs to test endpoints. You can verify the database was created by executing the /teams endpoint
 
 
-# Resources I Found Helpful
+
+# Resources
 [Minimal APIs Overview](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0)
 
 [Tutorial: Create a minimal web API with ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-6.0&tabs=visual-studio)
