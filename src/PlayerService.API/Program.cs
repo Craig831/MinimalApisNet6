@@ -21,14 +21,14 @@ app.UseSwagger();
 app.MapGet("/error", () => Results.Problem("An error has occurred...", statusCode: 500))
     .ExcludeFromDescription();
 
-app.MapGet("/", () => "Hello Demo!!!")
+app.MapGet("/", () => "It worked!!!  Add '/swagger/index.html' to the url to test endpoints")
     .ExcludeFromDescription();
 
 // get all players
 app.MapGet("/players", async (BaseballDbContext db) => await db.MlbPlayers.ToListAsync())
     .Produces<List<MlbPlayer>>(StatusCodes.Status200OK)
     .WithName("GetAllPlayers")
-    .WithTags("Fetch");
+    .WithTags("Players");
 
 // get a single player by id
 app.MapGet("/players/{id}", async (int id, BaseballDbContext db) =>
@@ -37,6 +37,7 @@ app.MapGet("/players/{id}", async (int id, BaseballDbContext db) =>
             ? Results.Ok(player)
             : Results.NotFound())
         .WithName("GetPlayerById")
+        .WithTags("Players")
         .Produces<MlbPlayer>(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status404NotFound);
 
@@ -89,13 +90,15 @@ app.MapPost("/playersearch", async ([FromBody] PlayerSearchDTO searchPlayer, [Fr
     }
 })
     .Produces<List<MlbPlayer>>(StatusCodes.Status200OK)
-    .Produces(StatusCodes.Status204NoContent);
+    .Produces(StatusCodes.Status204NoContent)
+    .WithName("PlayerSearch")
+    .WithTags("Players");
 
 // get all teams
 app.MapGet("/teams", async (BaseballDbContext db) => await db.MlbTeams.ToListAsync())
     .Produces<List<MlbTeam>>(StatusCodes.Status200OK)
-    .WithName("GetMlbTeams")
-    .WithTags("Fetch");
+    .WithName("GetAllTeams")
+    .WithTags("Teams");
 
 // get a collection of teams using a search dto (team name, team city)
 app.MapPost("/teamsearch", async ([FromBody] TeamSearchDTO searchTeam, [FromServices] BaseballDbContext db, HttpResponse response) =>
@@ -127,7 +130,9 @@ app.MapPost("/teamsearch", async ([FromBody] TeamSearchDTO searchTeam, [FromServ
     }
 })
     .Produces<List<MlbTeam>>(StatusCodes.Status200OK)
-    .Produces(StatusCodes.Status204NoContent);
+    .Produces(StatusCodes.Status204NoContent)
+    .WithName("TeamSearch")
+    .WithTags("Teams");
 
 // add new player
 app.MapPost("/players", async ([FromBody] MlbPlayer addPlayer, [FromServices] BaseballDbContext db, HttpResponse response) =>
@@ -150,8 +155,8 @@ app.MapPost("/players", async ([FromBody] MlbPlayer addPlayer, [FromServices] Ba
 })
     .Accepts<MlbPlayer>("application/json")
     .Produces<MlbPlayer>(StatusCodes.Status201Created)
-    .WithName("AddMlbPlayer")
-    .WithTags("Add/Update");
+    .WithName("AddPlayer")
+    .WithTags("Players");
 
 // update an existing player (nickname only)
 app.MapPut("/players", [AllowAnonymous] async ([FromBody] MlbPlayer updatePlayer, [FromServices] BaseballDbContext db, HttpResponse response) =>
@@ -199,11 +204,10 @@ app.MapPut("/players", [AllowAnonymous] async ([FromBody] MlbPlayer updatePlayer
     .Produces<MlbPlayer>(StatusCodes.Status201Created)
     .Produces(StatusCodes.Status400BadRequest)
     .Produces(StatusCodes.Status404NotFound)
-    .WithName("UpdateMlbPlayer")
-    .WithTags("Add/Update");
+    .WithName("UpdatePlayer")
+    .WithTags("Players");
 
 app.UseSwaggerUI();
-
 
 app.Run();
 
